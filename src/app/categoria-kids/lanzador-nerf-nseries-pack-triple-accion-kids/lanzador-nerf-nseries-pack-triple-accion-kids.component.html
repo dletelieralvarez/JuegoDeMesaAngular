@@ -1,0 +1,208 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5">
+            <!-- Columna izquierda: Imágenes -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <img #mainImage id="mainImage" class="img-fluid border" src="../../assets/imgKids/lanzador-nerf-n-series-pack-triple-accion/01.jpg" alt="Imagen principal" style="cursor: zoom-in;" />
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <img 
+                        *ngFor="let img of imagenes; 
+                        let i = index" 
+                        class="thumbnail-img border" 
+                        [src]="img"
+                        alt="thumb"
+                        width="190" 
+                        height="190" 
+                        (click)="mostrarImagen(i)">
+                    <!-- <img class="thumbnail-img border" src="../../assets/imgKids/lanzador-nerf-n-series-pack-triple-accion/02.jpg" alt="thumb3" width="190" height="190" style="cursor:pointer;">
+                    <img class="thumbnail-img border" src="../../assets/imgKids/lanzador-nerf-n-series-pack-triple-accion/03.jpg" alt="thumb1" width="190" height="190" style="cursor:pointer;"> -->
+                </div>
+            </div>
+
+            <!-- Columna derecha: Detalles -->
+            <div class="col-md-6">                  
+                <div class="small mb-1">SKU: F9841</div>
+                <h1 class="display-5 fw-bolder">LANZADOR NERF N SERIES PACK TRIPLE ACCIÓN</h1>
+                <div class="fs-5 mb-5">
+                    <span>$20.990</span>
+                </div>
+                <p class="lead">¡La marca Nerf lleva tu juego al siguiente nivel con los lanzadores y dardos de alto rendimiento N1 de Nerf N Series! 
+                    Ya posees la habilidad de un jugador de Nerf y ahora tienes los lanzadores y los dardos para dominar en los juegos bajo techo 
+                    y al aire libre. De los creadores del dardo de espuma, la marca Nerf revela la nueva fase en la evolución de los dardos con 
+                    los dardos N1 de Nerf N Series, ¡ofreciendo EXTREMA PRECISIÓN, VELOCIDAD y DISTANCIA! ¡La diversión se triplica con el 
+                    Pack Acción Triple de Nerf N Series! Este set incluye 3 lanzadores Nerf N Series diferentes, cada uno con su propio estilo y color, 
+                    y viene con 12 dardos N1 de espuma Nerf N Series. Es un set excelente para aumentar tu colección Nerf y divertirte con diferentes 
+                    lanzadores cada vez que juegues. Cada lanzador se carga fácilmente, tiene capacidad para 2 dardos y lanza 1 a la vez. Los lanzadores 
+                    Nerf N Series solo son compatibles con los dardos N1 de Nerf. Se recomienda el uso de gafas (no incluidas).</p>
+                <div class="d-flex">
+                    <input 
+                        #cantidadInput
+                        class="form-control text-center me-3"
+                        type="number"
+                        [(ngModel)]="cantidad"
+                        min="1" 
+                        style="max-width: 3rem" />
+                    <button class="btn btn-outline-dark flex-shrink-0" 
+                        type="button"
+                        (click)="agregarAlCarrito()">
+                        <i class="bi-cart-fill me-1"></i>
+                        AÑADIR AL CARRITO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Related items section-->
+<section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Productos relacionados</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="assets/imgKids/dardos-nerf-n-series-80-unidades/01.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">DARDOS NERF N SERIES 80 UNIDADES</h5>
+                                <!-- Product price-->
+                                $9.990
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark flex-shrink-0" 
+                                    type="button" 
+                                    (click)="agregarProductoRelacionadoAlCarrito({
+                                            nombre: 'DARDOS NERF N SERIES 80 UNIDADES',
+                                            precio: '$9.990',
+                                            imagen: 'assets/imgKids/dardos-nerf-n-series-80-unidades/01.jpg',
+                                            sku: 'F8638'
+                                            })">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    AÑADIR AL CARRITO
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                         <!-- Product image-->
+                        <img class="card-img-top" src="assets/imgKids/lanzador-nerf-wild-wolfpack/01.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">LANZADOR NERF WILD WOLFPACK</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.990</span>
+                                $9.990
+                           </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark flex-shrink-0" 
+                                    type="button" 
+                                    (click)="agregarProductoRelacionadoAlCarrito({
+                                            nombre: 'LANZADOR NERF WILD WOLFPACK',
+                                            precio: '$9.990',
+                                            imagen: 'assets/imgKids/lanzador-nerf-wild-wolfpack/01.jpg',
+                                            sku: 'G0031'
+                                            })">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    AÑADIR AL CARRITO
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                         <!-- Product image-->
+                        <img class="card-img-top" src="assets/imgKids/lanzador-nerf-n-series-strikeback/01.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">LANZADOR NERF N SERIES STRIKEBACK</h5>
+                                <!-- Product price-->                                
+                                $27.990
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark flex-shrink-0" 
+                                    type="button" 
+                                    (click)="agregarProductoRelacionadoAlCarrito({
+                                            nombre: 'LANZADOR NERF N SERIES STRIKEBACK',
+                                            precio: '$27.990',
+                                            imagen: 'assets/imgKids/lanzador-nerf-n-series-strikeback/01.jpg',
+                                            sku: 'G0219'
+                                            })">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    AÑADIR AL CARRITO
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="assets/imgKids/lanzador-nerf-n-series-shadow-storm/01.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">LANZADOR NERF N SERIES SHADOW STORM</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                $30.990
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark flex-shrink-0" 
+                                    type="button" 
+                                    (click)="agregarProductoRelacionadoAlCarrito({
+                                            nombre: 'LANZADOR NERF N SERIES SHADOW STORM',
+                                            precio: '$30.990',
+                                            imagen: 'assets/imgKids/lanzador-nerf-n-series-shadow-storm/01.jpg',
+                                            sku: 'G0350'
+                                            })">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    AÑADIR AL CARRITO
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

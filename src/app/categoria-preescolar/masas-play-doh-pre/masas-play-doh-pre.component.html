@@ -1,0 +1,65 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5">
+            <!-- Columna izquierda: Imágenes -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <img #mainImage 
+                        id="mainImage" 
+                        class="img-fluid border" 
+                        src="assets/imgPreescolar/play-doh/01.jpg" 
+                        alt="Imagen principal" 
+                        style="cursor: zoom-in;" />
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <img
+                        *ngFor="let img of imagenes; let i = index"
+                        class="thumbnail-img border" 
+                        [src]="img"
+                        alt="thumb"
+                        width="190"
+                        height="190" 
+                        (click)="mostrarImagen(i)">
+                    <!-- <img class="thumbnail-img border" src="../../assets/imgPreescolar/play-doh/04.jpg" alt="thumb3" width="190" height="190" style="cursor:pointer;">
+                    <img class="thumbnail-img border" src="../../assets/imgPreescolar/play-doh/01.jpg" alt="thumb1" width="190" height="190" style="cursor:pointer;"> -->
+                </div>
+            </div>
+
+            <!-- Columna derecha: Detalles -->
+            <div class="col-md-6">
+                <div class="small mb-1">SKU: A7924</div>
+                <h1 class="display-5 fw-bolder">MASAS PLAY-DOH CLÁSICO MALETÍN COLORES</h1>
+                <div class="fs-5 mb-5">
+                    <span>$22.990</span>
+                </div>
+                <p class="lead">¡El set Play-Doh Súper maletín de colores ha llegado para añadir
+                     color a las creaciones de los más pequeños con la plastilina 
+                     Play-Doh no tóxica en 20 colores distintos! Desde disparatadas 
+                     criaturas hasta comidas de juguete, los más pequeños podrán crear 
+                     todo lo que puedan imaginar. Es perfecto para jugar por primera vez 
+                     con Play-Doh o añadir colores adicionales a tus juguetes Play-Doh en casa. 
+                     (Se venden por separado. Sujeto a disponibilidad).
+                     ¡Los maestros también pueden usar este set Play-Doh para las actividades 
+                     escolares! ¡Los sets Play-Doh aportan color y diversión a la hora del juego 
+                     para que los niños y niñas a partir de 2 años que se diviertan modelando y 
+                     jugando con plastilina!</p>
+                <div class="d-flex">
+                    <input 
+                        #cantidadInput
+                        class="form-control text-center me-3"
+                        type="number"
+                        [(ngModel)]="cantidad"
+                        min="1" 
+                        style="max-width: 3rem" />
+                    <button 
+                        class="btn btn-outline-dark flex-shrink-0" 
+                        type="button"
+                        (click)="agregarAlCarrito()">
+                        <i class="bi-cart-fill me-1"></i>
+                        AÑADIR AL CARRITO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

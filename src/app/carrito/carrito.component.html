@@ -1,0 +1,46 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">        
+        <div class="col-md-12">
+            <div>
+                <h2 class="mb-4">Mi Carrito de Compras</h2>
+                <div class="table-responsive" *ngIf="carrito.length > 0; else sinProductos">
+                    <table class="table table-bordered text-center" *ngIf="carrito.length > 0;">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-carrito">
+                            <tr *ngFor="let producto of carrito; let i = index">
+                                <td style="text-align: left;">
+                                    <img [src]="producto.imagen" alt="{{ producto.nombre }}" width="50" class="img-fluid me-2" style="max-width: 50px; vertical-align: middle;">
+                                    {{ producto.nombre }}
+                                </td>                                
+                                <td>{{ producto.precio }}</td>
+                                <td>{{ producto.cantidad }}</td>
+                                <td>{{ obtenerPrecioNumerico(producto.precio) * producto.cantidad | precio}}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" (click)="cambiarCantidad(i, 1)">+</button>
+                                    <button class="btn btn-sm btn-warning" (click)="cambiarCantidad(i, -1)">-</button>
+                                    <button class="btn btn-sm btn-danger" (click)="eliminarProducto(i)">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    <ng-template #sinProductos>
+                        <p class="text-center">Tu carrito está vacío.</p>
+                    </ng-template>
+
+                    <h4 class="text-end mt-4">Total:{{ obtenerPrecioNumerico(total) | precio }}</h4>
+                    <button class="btn btn-success mt-3" (click)="finalizarCompra()" [disabled]="carrito.length === 0">
+                        Finalizar Compra
+                    </button> 
+            </div>
+        </div>
+    </div>
+</section>       

@@ -1,0 +1,55 @@
+<section class="py-5">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="login-container">
+      <h2 class="text-center mb-4">Iniciar Sesión</h2>
+      <form (ngSubmit)="onLogin()" [formGroup]="formLogin">
+        <div class="mb-3">
+          <label for="logEmail" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="logEmail"
+            formControlName="email"            
+            required
+            [ngClass]="{ 
+                'is-invalid': email.invalid && email.touched,
+                'is-valid': email.valid && email.touched
+              }"
+            placeholder="correo@ejemplo.com"
+          />
+          <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
+                    Email es obligatorio.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="logPassword" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="logPassword"
+            formControlName="password"
+            required
+            [ngClass]="{ 
+                'is-invalid': password.invalid && password.touched ,
+                 'is-valid': password.valid && password.touched 
+                }"
+            placeholder="Contraseña"
+          />
+          <div *ngIf="password.touched && password.invalid" class="invalid-feedback">
+                    Debe ingresar una contraseña valida.
+          </div>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-danger">Ingresar</button>
+        </div>
+        <div class="mt-3 text-center">
+          <a routerLink="/registro" class="text-white-50">¿No tiene una cuenta? Cree una aquí</a>
+        </div>
+      </form>
+
+      <div *ngIf="mensaje" class="mt-3 text-center text-danger fw-bold">
+        {{ mensaje }}
+      </div>
+    </div>
+  </div>
+</section>

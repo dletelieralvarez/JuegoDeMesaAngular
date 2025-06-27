@@ -1,0 +1,168 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5">
+            <!-- Columna izquierda: Imágenes -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <img 
+                        #mainImage 
+                        id="mainImage" 
+                        class="img-fluid border" 
+                        src="assets/imgFans/casco-electronico-fan-star-wars-black-series-mandaloriano/01.jpg" 
+                        alt="Imagen principal" />
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <img
+                        *ngFor="let img of imagenes; let i = index"
+                        class="thumbnail-img border" 
+                        [src]="img"
+                        alt="thumb"
+                        width="190"
+                        height="190" 
+                        (click)="mostrarImagen(i)">
+                    <!-- <img class="thumbnail-img border" src="../../assets/imgFans/casco-electronico-fan-star-wars-black-series-mandaloriano/02.jpg" alt="thumb3" width="190" height="190" style="cursor:pointer;">
+                    <img class="thumbnail-img border" src="../../assets/imgFans/casco-electronico-fan-star-wars-black-series-mandaloriano/03.jpg" alt="thumb1" width="190" height="190" style="cursor:pointer;"> -->
+                </div>
+            </div>
+
+            <!-- Columna derecha: Detalles -->
+            <div class="col-md-6">                  
+                <div class="small mb-1">SKU: F0493</div>
+                <h1 class="display-5 fw-bolder">CASCO ELECTRONICO FAN STAR WARS BLACK SERIES MANDALORIANO</h1>
+                <div class="fs-5 mb-5">
+                    <span>$104.690</span>
+                </div>
+                <p class="lead">Nadie sabe con certeza quién es este forastero tan bien equipado. Aguerrido y taciturno, el Mandaloriano es un formidable 
+                    cazarrecompensas en una galaxia cada vez más peligrosa. ¡Tanto chicos como fans pueden imaginar las batallas y misiones más importantes 
+                    de la saga Star Wars con los artículos premium para juego de rol de Star Wars Black Series! Con una extrema atención a los detalles, 
+                    esta serie establece el estándar de calidad y el realismo que esperan los fanáticos de Star Wars. Este artículo para juego de rol con 
+                    decorado premium, detalles realistas y diseño inspirado en la serie es una gran adición a toda colección Star Wars. ¡Con su luz táctica 
+                    extraíble y sus luces interiores, los fans pueden reproducir la experiencia del Mandaloriano cuando se equipa para rastrear a sus 
+                    objetivos o para proteger al misterioso alienígena perseguido por cazarrecompensas contratados por agentes imperiales! Los productos 
+                    Star Wars son producidos por Hasbro bajo licencia de Lucasfilm Ltd. Hasbro y todos los términos relacionados son marcas de comercio de Hasbro.</p>
+                <div class="d-flex">
+                    <input 
+                        #cantidadInput 
+                        class="form-control text-center me-3" 
+                        type="number"
+                        [(ngModel)]="cantidad"
+                        min="1"
+                        style="max-width: 3rem" />
+                    <button 
+                        class="btn btn-outline-dark flex-shrink-0" 
+                        type="button"
+                        (click)="agregarAlCarrito()">
+                        <i class="bi-cart-fill me-1"></i>
+                        AÑADIR AL CARRITO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Related items section-->
+<section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Productos relacionados</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $0 - $0
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver opciones</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Special Item</h5>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">$0</span>
+                            $0
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                            <!-- Product name-->
+                                <h5 class="fw-bolder">Sale Item</h5>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$0</span>
+                                $0
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Popular Item</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <!-- Product price-->
+                            $0
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
