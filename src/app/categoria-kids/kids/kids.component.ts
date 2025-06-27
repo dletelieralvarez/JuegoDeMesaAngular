@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/carrito.service';
 
+/**
+ * @component
+ * @description
+ * Componente Kids: Muestra 5 productos correspondientes a la categoria Kids.
+ * 
+ */
+
 @Component({
   selector: 'app-kids',
   templateUrl: './kids.component.html',

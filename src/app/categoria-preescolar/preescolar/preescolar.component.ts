@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/carrito.service';
 
+/**
+ * @component
+ * @description
+ * Componente Preescolar: Muestra productos correspondientes a la categoria Preescolar.
+ * 
+ */
+
 @Component({
   selector: 'app-preescolar',
   templateUrl: './preescolar.component.html',

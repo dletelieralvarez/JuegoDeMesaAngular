@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/carrito.service';
 
+/**
+ * @component
+ * @description
+ * Componente Familia: Muestra productos correspondientes a la categoria Familia.
+ * 
+ */
+
 @Component({
   selector: 'app-familia',
   templateUrl: './familia.component.html',

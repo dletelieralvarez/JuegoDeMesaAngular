@@ -4,11 +4,19 @@ import { CarritoService } from '../carrito.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+/**
+ * @component
+ * @description
+ * Componente Navbar: barra de navegación donde se puede acceder a distintas categorías.
+ * Muestra inicio de sesión, carrito de compras y, según el usuario, opciones de administrador o datos personales.
+ */
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
   //carrito de compras
   usuarioLogueado = false;

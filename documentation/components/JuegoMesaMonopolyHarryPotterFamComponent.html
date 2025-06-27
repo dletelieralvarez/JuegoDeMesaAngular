@@ -1,0 +1,1096 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>juego-de-mesa-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">juego-de-mesa-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  JuegoMesaMonopolyHarryPotterFamComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-juego-mesa-monopoly-harry-potter-fam</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./juego-mesa-monopoly-harry-potter-fam.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./juego-mesa-monopoly-harry-potter-fam.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cantidad" >cantidad</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#cantidadInput" >cantidadInput</a>
+                            </li>
+                            <li>
+                                <a href="#imagenActualIndex" >imagenActualIndex</a>
+                            </li>
+                            <li>
+                                <a href="#imagenes" >imagenes</a>
+                            </li>
+                            <li>
+                                <a href="#intervalId" >intervalId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarImagen" >actualizarImagen</a>
+                            </li>
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                            <li>
+                                <a href="#iniciarCarrusel" >iniciarCarrusel</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarImagen" >mostrarImagen</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(carritoService: <a href="../injectables/CarritoService.html" target="_self">CarritoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>carritoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CarritoService.html" target="_self" >CarritoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarImagen"></a>
+                    <span class="name">
+                        <span ><b>actualizarImagen</b></span>
+                        <a href="#actualizarImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarImagen()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iniciarCarrusel"></a>
+                    <span class="name">
+                        <span ><b>iniciarCarrusel</b></span>
+                        <a href="#iniciarCarrusel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>iniciarCarrusel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarImagen"></a>
+                    <span class="name">
+                        <span ><b>mostrarImagen</b></span>
+                        <a href="#mostrarImagen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarImagen(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cantidad"></a>
+                    <span class="name">
+                        <span ><b>cantidad</b></span>
+                        <a href="#cantidad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cantidadInput"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>cantidadInput</b></span>
+                        <a href="#cantidadInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;cantidadInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenActualIndex"></a>
+                    <span class="name">
+                        <span ><b>imagenActualIndex</b></span>
+                        <a href="#imagenActualIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imagenes"></a>
+                    <span class="name">
+                        <span ><b>imagenes</b></span>
+                        <a href="#imagenes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/01.jpg&#x27;,
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/02.jpg&#x27;,
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/03.jpg&#x27;
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="intervalId"></a>
+                    <span class="name">
+                        <span ><b>intervalId</b></span>
+                        <a href="#intervalId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+import { CarritoService } from &#x27;src/app/carrito.service&#x27;;
+
+@Component({
+  selector: &#x27;app-juego-mesa-monopoly-harry-potter-fam&#x27;,
+  templateUrl: &#x27;./juego-mesa-monopoly-harry-potter-fam.component.html&#x27;,
+  styleUrls: [&#x27;./juego-mesa-monopoly-harry-potter-fam.component.css&#x27;]
+})
+export class JuegoMesaMonopolyHarryPotterFamComponent {
+  @ViewChild(&#x27;cantidadInput&#x27;) cantidadInput!: ElementRef; 
+    cantidad: number &#x3D; 1;
+  
+    constructor(private carritoService: CarritoService) {}
+  
+    agregarAlCarrito(): void {
+        const cantidad &#x3D; Number(this.cantidadInput.nativeElement.value);
+        const producto &#x3D; {
+          nombre: &#x27;JUEGO DE MESA MONOPOLY HARRY POTTER&#x27;,
+          sku: &#x27;F9422&#x27;,
+          precio: &#x27;$40.690&#x27;, 
+          imagen: &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/01.jpg&#x27;
+        };
+  
+      this.carritoService.agregarProducto(producto, cantidad);
+      alert(&#x60;Cantidad Agregada al carrito (${this.cantidad}) - producto ${producto.nombre}&#x60;);
+    }
+
+    //efecto para las imagenes
+  imagenes: string[] &#x3D; [
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/01.jpg&#x27;,
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/02.jpg&#x27;,
+    &#x27;assets/imgFamilia/juego-mesa-monopoly-harry-potter/03.jpg&#x27;
+  ];
+
+  imagenActualIndex &#x3D; 0;
+  intervalId: any;
+
+  ngOnInit() {
+    this.iniciarCarrusel();
+  }
+
+  mostrarImagen(index: number): void {
+    this.imagenActualIndex &#x3D; index;
+    this.actualizarImagen();
+  }
+
+  actualizarImagen(): void {
+    const mainImage &#x3D; document.getElementById(&#x27;mainImage&#x27;) as HTMLImageElement;
+    if (mainImage) {
+      mainImage.src &#x3D; this.imagenes[this.imagenActualIndex];
+    }
+  }
+
+  iniciarCarrusel(): void {
+    this.intervalId &#x3D; setInterval(() &#x3D;&gt; {
+      this.imagenActualIndex &#x3D; (this.imagenActualIndex + 1) % this.imagenes.length;
+      this.actualizarImagen();
+    }, 3000); // cambia cada 3 segundos
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;py-5&quot;&gt;
+    &lt;div class&#x3D;&quot;container px-4 px-lg-5 my-5&quot;&gt;
+        &lt;div class&#x3D;&quot;row gx-4 gx-lg-5&quot;&gt;
+            &lt;!-- Columna izquierda: Imágenes --&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                    &lt;img 
+                        #mainImage 
+                        id&#x3D;&quot;mainImage&quot;
+                        class&#x3D;&quot;img-fluid border&quot; 
+                        src&#x3D;&quot;assets/imgFamilia/juego-mesa-monopoly-harry-potter/01.jpg&quot; 
+                        alt&#x3D;&quot;Imagen principal&quot; 
+                        style&#x3D;&quot;cursor: zoom-in;&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;d-flex flex-wrap gap-2&quot;&gt;
+                    &lt;img
+                        *ngFor&#x3D;&quot;let img of imagenes; let i &#x3D; index&quot;
+                        class&#x3D;&quot;thumbnail-img border&quot; 
+                        [src]&#x3D;&quot;img&quot;
+                        alt&#x3D;&quot;thumb&quot;
+                        width&#x3D;&quot;190&quot;
+                        height&#x3D;&quot;190&quot; 
+                        (click)&#x3D;&quot;mostrarImagen(i)&quot;&gt;
+                    &lt;!-- &lt;img class&#x3D;&quot;thumbnail-img border&quot; src&#x3D;&quot;../../assets/imgFamilia/juego-mesa-monopoly-harry-potter/02.jpg&quot; alt&#x3D;&quot;thumb3&quot; width&#x3D;&quot;190&quot; height&#x3D;&quot;190&quot; style&#x3D;&quot;cursor:pointer;&quot;&gt;
+                    &lt;img class&#x3D;&quot;thumbnail-img border&quot; src&#x3D;&quot;../../assets/imgFamilia/juego-mesa-monopoly-harry-potter/03.jpg&quot; alt&#x3D;&quot;thumb1&quot; width&#x3D;&quot;190&quot; height&#x3D;&quot;190&quot; style&#x3D;&quot;cursor:pointer;&quot;&gt; --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Columna derecha: Detalles --&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;                  
+                &lt;div class&#x3D;&quot;small mb-1&quot;&gt;SKU: F9422&lt;/div&gt;
+                &lt;h1 class&#x3D;&quot;display-5 fw-bolder&quot;&gt;JUEGO DE MESA MONOPOLY HARRY POTTER&lt;/h1&gt;
+                &lt;div class&#x3D;&quot;fs-5 mb-5&quot;&gt;
+                    &lt;span&gt;$40.690&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class&#x3D;&quot;lead&quot;&gt;¿Estás listo para un año mágico en Hogwarts? En el juego Monopoly Harry Potter, puedes jugar como si fueras un estudiante de Hogwarts. 
+                    Para comenzar, cada jugador elige un peón dorado temático. A continuación, elige una carta de Casa y es asignado a dicha Casa. En esta edición, 
+                    los lugares de Hogwarts remplazan las propiedades y los Puntos de Casa remplazan el dinero Monopoly. 
+                    Recorre el tablero y usa los Puntos de Casa para explorar lugares icónicos en el Castillo de Hogwarts y en la Villa de Hogsmeade. 
+                    Cuanto más explore un jugador, más Puntos de Casa recibirá de otros jugadores. Reúne un grupo de color para añadir Escudos de Casa 
+                    y roba cartas de Búhos mensajeros para recibir noticias que pueden cambiar la partida. ¡La partida termina cuando todos los lugares 
+                    se han explorado y el jugador con más Puntos de Casa será el ganador! Este juego de mesa estratégico es una divertida opción para 
+                    jugar en familia y es un excelente regalo para los niños, niñas, adolescentes y adultos que son fans de Harry Potter. Edad recomendada: A 
+                    partir de 8 años.&lt;/p&gt;
+                &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+                    &lt;input
+                        #cantidadInput 
+                        class&#x3D;&quot;form-control text-center me-3&quot; 
+                        type&#x3D;&quot;number&quot;
+                        [(ngModel)]&#x3D;&quot;cantidad&quot;
+                        min&#x3D;&quot;1&quot; 
+                        style&#x3D;&quot;max-width: 3rem&quot; /&gt;
+                    &lt;button 
+                        class&#x3D;&quot;btn btn-outline-dark flex-shrink-0&quot; 
+                        type&#x3D;&quot;button&quot;
+                        (click)&#x3D;&quot;agregarAlCarrito()&quot;&gt;
+                        &lt;i class&#x3D;&quot;bi-cart-fill me-1&quot;&gt;&lt;/i&gt;
+                        AÑADIR AL CARRITO
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Related items section--&gt;
+&lt;section class&#x3D;&quot;py-5 bg-light&quot;&gt;
+    &lt;div class&#x3D;&quot;container px-4 px-lg-5 mt-5&quot;&gt;
+        &lt;h2 class&#x3D;&quot;fw-bolder mb-4&quot;&gt;Productos relacionados&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center&quot;&gt;
+            &lt;div class&#x3D;&quot;col mb-5&quot;&gt;
+                &lt;div class&#x3D;&quot;card h-100&quot;&gt;
+                    &lt;!-- Product image--&gt;
+                    &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;https://dummyimage.com/450x300/dee2e6/6c757d.jpg&quot; alt&#x3D;&quot;...&quot; /&gt;
+                    &lt;!-- Product details--&gt;
+                    &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                        &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                            &lt;!-- Product name--&gt;
+                            &lt;h5 class&#x3D;&quot;fw-bolder&quot;&gt;Fancy Product&lt;/h5&gt;
+                            &lt;!-- Product price--&gt;
+                            $0 - $0
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Product actions--&gt;
+                    &lt;div class&#x3D;&quot;card-footer p-4 pt-0 border-top-0 bg-transparent&quot;&gt;
+                        &lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;a class&#x3D;&quot;btn btn-outline-dark mt-auto&quot; href&#x3D;&quot;#&quot;&gt;Ver opciones&lt;/a&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col mb-5&quot;&gt;
+                &lt;div class&#x3D;&quot;card h-100&quot;&gt;
+                    &lt;!-- Sale badge--&gt;
+                    &lt;div class&#x3D;&quot;badge bg-dark text-white position-absolute&quot; style&#x3D;&quot;top: 0.5rem; right: 0.5rem&quot;&gt;Sale&lt;/div&gt;
+                        &lt;!-- Product image--&gt;
+                        &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;https://dummyimage.com/450x300/dee2e6/6c757d.jpg&quot; alt&#x3D;&quot;...&quot; /&gt;
+                        &lt;!-- Product details--&gt;
+                        &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                            &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                                &lt;!-- Product name--&gt;
+                                &lt;h5 class&#x3D;&quot;fw-bolder&quot;&gt;Special Item&lt;/h5&gt;
+                                &lt;!-- Product reviews--&gt;
+                                &lt;div class&#x3D;&quot;d-flex justify-content-center small text-warning mb-2&quot;&gt;
+                                    &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- Product price--&gt;
+                                &lt;span class&#x3D;&quot;text-muted text-decoration-line-through&quot;&gt;$0&lt;/span&gt;
+                                    $0
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- Product actions--&gt;
+                        &lt;div class&#x3D;&quot;card-footer p-4 pt-0 border-top-0 bg-transparent&quot;&gt;
+                            &lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;a class&#x3D;&quot;btn btn-outline-dark mt-auto&quot; href&#x3D;&quot;#&quot;&gt;AÑADIR AL CARRITO&lt;/a&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col mb-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;card h-100&quot;&gt;
+                        &lt;!-- Sale badge--&gt;
+                        &lt;div class&#x3D;&quot;badge bg-dark text-white position-absolute&quot; style&#x3D;&quot;top: 0.5rem; right: 0.5rem&quot;&gt;Sale&lt;/div&gt;
+                        &lt;!-- Product image--&gt;
+                            &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;https://dummyimage.com/450x300/dee2e6/6c757d.jpg&quot; alt&#x3D;&quot;...&quot; /&gt;
+                            &lt;!-- Product details--&gt;
+                            &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                                    &lt;!-- Product name--&gt;
+                                    &lt;h5 class&#x3D;&quot;fw-bolder&quot;&gt;Sale Item&lt;/h5&gt;
+                                    &lt;!-- Product price--&gt;
+                                    &lt;span class&#x3D;&quot;text-muted text-decoration-line-through&quot;&gt;$0&lt;/span&gt;
+                                    $0
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Product actions--&gt;
+                            &lt;div class&#x3D;&quot;card-footer p-4 pt-0 border-top-0 bg-transparent&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;a class&#x3D;&quot;btn btn-outline-dark mt-auto&quot; href&#x3D;&quot;#&quot;&gt;AÑADIR AL CARRITO&lt;/a&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col mb-5&quot;&gt;
+                        &lt;div class&#x3D;&quot;card h-100&quot;&gt;
+                            &lt;!-- Product image--&gt;
+                            &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;https://dummyimage.com/450x300/dee2e6/6c757d.jpg&quot; alt&#x3D;&quot;...&quot; /&gt;
+                            &lt;!-- Product details--&gt;
+                            &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                                    &lt;!-- Product name--&gt;
+                                    &lt;h5 class&#x3D;&quot;fw-bolder&quot;&gt;Popular Item&lt;/h5&gt;
+                                    &lt;!-- Product reviews--&gt;
+                                    &lt;div class&#x3D;&quot;d-flex justify-content-center small text-warning mb-2&quot;&gt;
+                                        &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;bi-star-fill&quot;&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;!-- Product price--&gt;
+                                    $0
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Product actions--&gt;
+                            &lt;div class&#x3D;&quot;card-footer p-4 pt-0 border-top-0 bg-transparent&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;a class&#x3D;&quot;btn btn-outline-dark mt-auto&quot; href&#x3D;&quot;#&quot;&gt;AÑADIR AL CARRITO&lt;/a&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./juego-mesa-monopoly-harry-potter-fam.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="py-5">    <div class="container px-4 px-lg-5 my-5">        <div class="row gx-4 gx-lg-5">            <!-- Columna izquierda: Imágenes -->            <div class="col-md-6">                <div class="mb-3">                    <img                         #mainImage                         id="mainImage"                        class="img-fluid border"                         src="assets/imgFamilia/juego-mesa-monopoly-harry-potter/01.jpg"                         alt="Imagen principal"                         style="cursor: zoom-in;" />                </div>                <div class="d-flex flex-wrap gap-2">                    <img                        *ngFor="let img of imagenes; let i = index"                        class="thumbnail-img border"                         [src]="img"                        alt="thumb"                        width="190"                        height="190"                         (click)="mostrarImagen(i)">                    <!-- <img class="thumbnail-img border" src="../../assets/imgFamilia/juego-mesa-monopoly-harry-potter/02.jpg" alt="thumb3" width="190" height="190" style="cursor:pointer;">                    <img class="thumbnail-img border" src="../../assets/imgFamilia/juego-mesa-monopoly-harry-potter/03.jpg" alt="thumb1" width="190" height="190" style="cursor:pointer;"> -->                </div>            </div>            <!-- Columna derecha: Detalles -->            <div class="col-md-6">                                  <div class="small mb-1">SKU: F9422</div>                <h1 class="display-5 fw-bolder">JUEGO DE MESA MONOPOLY HARRY POTTER</h1>                <div class="fs-5 mb-5">                    <span>$40.690</span>                </div>                <p class="lead">¿Estás listo para un año mágico en Hogwarts? En el juego Monopoly Harry Potter, puedes jugar como si fueras un estudiante de Hogwarts.                     Para comenzar, cada jugador elige un peón dorado temático. A continuación, elige una carta de Casa y es asignado a dicha Casa. En esta edición,                     los lugares de Hogwarts remplazan las propiedades y los Puntos de Casa remplazan el dinero Monopoly.                     Recorre el tablero y usa los Puntos de Casa para explorar lugares icónicos en el Castillo de Hogwarts y en la Villa de Hogsmeade.                     Cuanto más explore un jugador, más Puntos de Casa recibirá de otros jugadores. Reúne un grupo de color para añadir Escudos de Casa                     y roba cartas de Búhos mensajeros para recibir noticias que pueden cambiar la partida. ¡La partida termina cuando todos los lugares                     se han explorado y el jugador con más Puntos de Casa será el ganador! Este juego de mesa estratégico es una divertida opción para                     jugar en familia y es un excelente regalo para los niños, niñas, adolescentes y adultos que son fans de Harry Potter. Edad recomendada: A                     partir de 8 años.</p>                <div class="d-flex">                    <input                        #cantidadInput                         class="form-control text-center me-3"                         type="number"                        [(ngModel)]="cantidad"                        min="1"                         style="max-width: 3rem" />                    <button                         class="btn btn-outline-dark flex-shrink-0"                         type="button"                        (click)="agregarAlCarrito()">                        <i class="bi-cart-fill me-1"></i>                        AÑADIR AL CARRITO                    </button>                </div>            </div>        </div>    </div></section><!-- Related items section--><section class="py-5 bg-light">    <div class="container px-4 px-lg-5 mt-5">        <h2 class="fw-bolder mb-4">Productos relacionados</h2>        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">            <div class="col mb-5">                <div class="card h-100">                    <!-- Product image-->                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />                    <!-- Product details-->                    <div class="card-body p-4">                        <div class="text-center">                            <!-- Product name-->                            <h5 class="fw-bolder">Fancy Product</h5>                            <!-- Product price-->                            $0 - $0                        </div>                    </div>                    <!-- Product actions-->                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver opciones</a></div>                    </div>                </div>            </div>            <div class="col mb-5">                <div class="card h-100">                    <!-- Sale badge-->                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>                        <!-- Product image-->                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />                        <!-- Product details-->                        <div class="card-body p-4">                            <div class="text-center">                                <!-- Product name-->                                <h5 class="fw-bolder">Special Item</h5>                                <!-- Product reviews-->                                <div class="d-flex justify-content-center small text-warning mb-2">                                    <div class="bi-star-fill"></div>                                    <div class="bi-star-fill"></div>                                    <div class="bi-star-fill"></div>                                    <div class="bi-star-fill"></div>                                    <div class="bi-star-fill"></div>                                </div>                                <!-- Product price-->                                <span class="text-muted text-decoration-line-through">$0</span>                                    $0                            </div>                        </div>                        <!-- Product actions-->                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>                        </div>                    </div>                </div>                <div class="col mb-5">                    <div class="card h-100">                        <!-- Sale badge-->                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>                        <!-- Product image-->                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />                            <!-- Product details-->                            <div class="card-body p-4">                                <div class="text-center">                                    <!-- Product name-->                                    <h5 class="fw-bolder">Sale Item</h5>                                    <!-- Product price-->                                    <span class="text-muted text-decoration-line-through">$0</span>                                    $0                                </div>                            </div>                            <!-- Product actions-->                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>                            </div>                        </div>                    </div>                    <div class="col mb-5">                        <div class="card h-100">                            <!-- Product image-->                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />                            <!-- Product details-->                            <div class="card-body p-4">                                <div class="text-center">                                    <!-- Product name-->                                    <h5 class="fw-bolder">Popular Item</h5>                                    <!-- Product reviews-->                                    <div class="d-flex justify-content-center small text-warning mb-2">                                        <div class="bi-star-fill"></div>                                        <div class="bi-star-fill"></div>                                        <div class="bi-star-fill"></div>                                        <div class="bi-star-fill"></div>                                        <div class="bi-star-fill"></div>                                    </div>                                    <!-- Product price-->                                    $0                                </div>                            </div>                            <!-- Product actions-->                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">AÑADIR AL CARRITO</a></div>                            </div>                        </div>                    </div>                </div>            </div></section></div>'
+    var COMPONENTS = [{'name': 'AdministradorComponent', 'selector': 'app-administrador'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarritoComponent', 'selector': 'app-carrito'},{'name': 'CascoElectronicoFanStarWarsBlackSeriesMandalorianoFansComponent', 'selector': 'app-casco-electronico-fan-star-wars-black-series-mandaloriano-fans'},{'name': 'DardosNerfNSeries80uniKidsComponent', 'selector': 'app-dardos-nerf-nseries80uni-kids'},{'name': 'FamiliaComponent', 'selector': 'app-familia'},{'name': 'FansComponent', 'selector': 'app-fans'},{'name': 'FiguraDidacticaCaraDePapaExpresionesPreComponent', 'selector': 'app-figura-didactica-cara-de-papa-expresiones-pre'},{'name': 'FiguraDidacticaCaraPapaPreComponent', 'selector': 'app-figura-didactica-cara-papa-pre'},{'name': 'FiguraDidacticaSraCaraPapaPreComponent', 'selector': 'app-figura-didactica-sra-cara-papa-pre'},{'name': 'FiguraDidacticaSrCaraPapaPreComponent', 'selector': 'app-figura-didactica-sr-cara-papa-pre'},{'name': 'FiguraMarvelClassicOlympusSpidermanFansComponent', 'selector': 'app-figura-marvel-classic-olympus-spiderman-fans'},{'name': 'FiguraMarvelClassicOlympusVenomFansComponent', 'selector': 'app-figura-marvel-classic-olympus-venom-fans'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GuanteElectronicoMarvelJuegoDeRolThorFansComponent', 'selector': 'app-guante-electronico-marvel-juego-de-rol-thor-fans'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'JuegoMesaAvalonHillTalismanFamComponent', 'selector': 'app-juego-mesa-avalon-hill-talisman-fam'},{'name': 'JuegoMesaDungeonsAndDragonsTheYawningPortalFamComponent', 'selector': 'app-juego-mesa-dungeons-and-dragons-the-yawning-portal-fam'},{'name': 'JuegoMesaMonopolyGamerMarioKartFamComponent', 'selector': 'app-juego-mesa-monopoly-gamer-mario-kart-fam'},{'name': 'JuegoMesaMonopolyHarryPotterFamComponent', 'selector': 'app-juego-mesa-monopoly-harry-potter-fam'},{'name': 'KidsComponent', 'selector': 'app-kids'},{'name': 'LanzadorNerfNSeriesPackTripleAccionKidsComponent', 'selector': 'app-lanzador-nerf-nseries-pack-triple-accion-kids'},{'name': 'LanzadorNerfNSeriesShadowStormKidsComponent', 'selector': 'app-lanzador-nerf-nseries-shadow-storm-kids'},{'name': 'LanzadorNerfNSeriesStrikeBackKidsComponent', 'selector': 'app-lanzador-nerf-nseries-strike-back-kids'},{'name': 'LanzadorNerfWildWolfPackKidsComponent', 'selector': 'app-lanzador-nerf-wild-wolf-pack-kids'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MasasPlayDohPreComponent', 'selector': 'app-masas-play-doh-pre'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilUsuarioComponent', 'selector': 'app-perfil-usuario'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'ProductoComponent', 'selector': 'app-producto'},{'name': 'RegistroComponent', 'selector': 'app-registro'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'JuegoMesaMonopolyHarryPotterFamComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'JuegoMesaMonopolyHarryPotterFamComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

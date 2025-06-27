@@ -1,0 +1,291 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>juego-de-mesa-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">juego-de-mesa-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Modules</li>
+    <li class="breadcrumb-item" >AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a href="#info" 
+            class="nav-link"
+            class="nav-link active"
+            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li class="nav-item">
+        <a href="#source" 
+            class="nav-link"
+            
+            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { AdministradorComponent } from &#x27;./administrador/administrador.component&#x27;;
+import { CarritoComponent } from &#x27;./carrito/carrito.component&#x27;;
+import { DardosNerfNSeries80uniKidsComponent } from &#x27;./categoria-kids/dardos-nerf-nseries80uni-kids/dardos-nerf-nseries80uni-kids.component&#x27;;
+import { FamiliaComponent } from &#x27;./categoria-familia/familia/familia.component&#x27;;
+import { FansComponent } from &#x27;./categoria-fans/fans/fans.component&#x27;;
+import { FiguraDidacticaCaraDePapaExpresionesPreComponent } from &#x27;./categoria-preescolar/figura-didactica-cara-de-papa-expresiones-pre/figura-didactica-cara-de-papa-expresiones-pre.component&#x27;;
+import { FiguraDidacticaCaraPapaPreComponent } from &#x27;./categoria-preescolar/figura-didactica-cara-papa-pre/figura-didactica-cara-papa-pre.component&#x27;;
+import { FiguraDidacticaSrCaraPapaPreComponent } from &#x27;./categoria-preescolar/figura-didactica-sr-cara-papa-pre/figura-didactica-sr-cara-papa-pre.component&#x27;;
+import { FiguraDidacticaSraCaraPapaPreComponent } from &#x27;./categoria-preescolar/figura-didactica-sra-cara-papa-pre/figura-didactica-sra-cara-papa-pre.component&#x27;;
+import { FiguraMarvelClassicOlympusSpidermanFansComponent } from &#x27;./categoria-fans/figura-marvel-classic-olympus-spiderman-fans/figura-marvel-classic-olympus-spiderman-fans.component&#x27;;
+import { FiguraMarvelClassicOlympusVenomFansComponent } from &#x27;./categoria-fans/figura-marvel-classic-olympus-venom-fans/figura-marvel-classic-olympus-venom-fans.component&#x27;;
+import { GuanteElectronicoMarvelJuegoDeRolThorFansComponent } from &#x27;./categoria-fans/guante-electronico-marvel-juego-de-rol-thor-fans/guante-electronico-marvel-juego-de-rol-thor-fans.component&#x27;;
+import { CascoElectronicoFanStarWarsBlackSeriesMandalorianoFansComponent } from &#x27;./categoria-fans/casco-electronico-fan-star-wars-black-series-mandaloriano-fans/casco-electronico-fan-star-wars-black-series-mandaloriano-fans.component&#x27;;
+import { JuegoMesaAvalonHillTalismanFamComponent } from &#x27;./categoria-familia/juego-mesa-avalon-hill-talisman-fam/juego-mesa-avalon-hill-talisman-fam.component&#x27;;
+import { JuegoMesaDungeonsAndDragonsTheYawningPortalFamComponent } from &#x27;./categoria-familia/juego-mesa-dungeons-and-dragons-the-yawning-portal-fam/juego-mesa-dungeons-and-dragons-the-yawning-portal-fam.component&#x27;;
+import { JuegoMesaMonopolyGamerMarioKartFamComponent } from &#x27;./categoria-familia/juego-mesa-monopoly-gamer-mario-kart-fam/juego-mesa-monopoly-gamer-mario-kart-fam.component&#x27;;
+import { JuegoMesaMonopolyHarryPotterFamComponent } from &#x27;./categoria-familia/juego-mesa-monopoly-harry-potter-fam/juego-mesa-monopoly-harry-potter-fam.component&#x27;;
+import { KidsComponent } from &#x27;./categoria-kids/kids/kids.component&#x27;;
+import { LanzadorNerfNSeriesPackTripleAccionKidsComponent } from &#x27;./categoria-kids/lanzador-nerf-nseries-pack-triple-accion-kids/lanzador-nerf-nseries-pack-triple-accion-kids.component&#x27;;
+import { LanzadorNerfNSeriesShadowStormKidsComponent } from &#x27;./categoria-kids/lanzador-nerf-nseries-shadow-storm-kids/lanzador-nerf-nseries-shadow-storm-kids.component&#x27;;
+import { LanzadorNerfNSeriesStrikeBackKidsComponent } from &#x27;./categoria-kids/lanzador-nerf-nseries-strike-back-kids/lanzador-nerf-nseries-strike-back-kids.component&#x27;;
+import { LanzadorNerfWildWolfPackKidsComponent } from &#x27;./categoria-kids/lanzador-nerf-wild-wolf-pack-kids/lanzador-nerf-wild-wolf-pack-kids.component&#x27;;
+import { LoginComponent } from &#x27;./registro-cliente/login/login.component&#x27;;
+import { MasasPlayDohPreComponent } from &#x27;./categoria-preescolar/masas-play-doh-pre/masas-play-doh-pre.component&#x27;;
+import { PerfilUsuarioComponent } from &#x27;./perfil-usuario/perfil-usuario.component&#x27;;
+import { PreescolarComponent } from &#x27;./categoria-preescolar/preescolar/preescolar.component&#x27;;
+import { RegistroComponent } from &#x27;./registro-cliente/registro/registro.component&#x27;;
+import { HomeComponent } from &#x27;./home/home.component&#x27;;
+
+const routes: Routes &#x3D; [
+  { path:&#x27;kids&#x27;, component: KidsComponent},  
+  { path:&#x27;familia&#x27;, component: FamiliaComponent},
+  { path:&#x27;fans&#x27;, component: FansComponent},
+  { path:&#x27;preescolar&#x27;, component: PreescolarComponent},
+  { path:&#x27;carrito&#x27;, component: CarritoComponent},
+  { path: &#x27;index&#x27;, component: HomeComponent },
+  { path: &#x27;login&#x27;, component: LoginComponent },
+  { path: &#x27;&#x27;, component: HomeComponent },
+  { path: &#x27;registro&#x27;, component: RegistroComponent },
+  { path: &#x27;administrador&#x27;, component: AdministradorComponent },
+  { path: &#x27;casco-electronico-fan-star-wars-black-series-mandaloriano-fans&#x27;, component: CascoElectronicoFanStarWarsBlackSeriesMandalorianoFansComponent },
+  { path: &#x27;figura-marvel-classic-olympus-spiderman-fans&#x27;, component: FiguraMarvelClassicOlympusSpidermanFansComponent },
+  { path: &#x27;figura-marvel-classic-olympus-venom-fans&#x27;, component: FiguraMarvelClassicOlympusVenomFansComponent },
+  { path: &#x27;guante-electronico-marvel-juego-de-rol-thor-fans&#x27;, component: GuanteElectronicoMarvelJuegoDeRolThorFansComponent },
+  { path: &#x27;dardos-nerf-nseries80uni-kids&#x27;, component: DardosNerfNSeries80uniKidsComponent },
+  { path: &#x27;lanzador-nerf-nseries-pack-triple-accion-kids&#x27;, component: LanzadorNerfNSeriesPackTripleAccionKidsComponent },
+  { path: &#x27;lanzador-nerf-nseries-shadow-storm-kids&#x27;, component: LanzadorNerfNSeriesShadowStormKidsComponent },
+  { path: &#x27;lanzador-nerf-nseries-strike-back-kids&#x27;, component: LanzadorNerfNSeriesStrikeBackKidsComponent },
+  { path: &#x27;lanzador-nerf-wild-wolf-pack-kids&#x27;, component: LanzadorNerfWildWolfPackKidsComponent },
+  { path: &#x27;masas-play-doh-pre&#x27;, component: MasasPlayDohPreComponent },
+  { path: &#x27;figura-didactica-cara-de-papa-pre&#x27;, component: FiguraDidacticaCaraPapaPreComponent },
+  { path: &#x27;figura-didactica-sr-cara-papa-pre&#x27;, component: FiguraDidacticaSrCaraPapaPreComponent },
+  { path: &#x27;figura-didactica-sra-cara-papa-pre&#x27;, component: FiguraDidacticaSraCaraPapaPreComponent },
+  { path: &#x27;figura-didactica-cara-de-papa-expresiones-pre&#x27;, component: FiguraDidacticaCaraDePapaExpresionesPreComponent },
+  { path: &#x27;juego-mesa-avalon-hill-talisman-fam&#x27;, component: JuegoMesaAvalonHillTalismanFamComponent },
+  { path: &#x27;juego-mesa-dungeons-and-dragons-the-yawning-portal-fam&#x27;, component: JuegoMesaDungeonsAndDragonsTheYawningPortalFamComponent },
+  { path: &#x27;juego-mesa-monopoly-gamer-mario-kart-fam&#x27;, component: JuegoMesaMonopolyGamerMarioKartFamComponent },
+  { path: &#x27;juego-mesa-monopoly-harry-potter-fam&#x27;, component: JuegoMesaMonopolyHarryPotterFamComponent },
+  { path: &#x27;perfil-usuario&#x27;, component: PerfilUsuarioComponent },
+  { path:&#x27;**&#x27;,redirectTo:&#x27;&#x27;}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

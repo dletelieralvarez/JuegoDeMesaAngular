@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/carrito.service';
 
+/**
+ * @component
+ * @description
+ * Componente Fans: Muestra productos correspondientes a la categoria Fans.
+ * 
+ */
+
 @Component({
   selector: 'app-fans',
   templateUrl: './fans.component.html',
