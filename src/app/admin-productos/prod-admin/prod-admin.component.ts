@@ -38,8 +38,11 @@ export class ProdAdminComponent implements OnInit {
 
 agregarProducto(): void {
   this.productoSerService.agregarProducto(this.nuevoProducto).subscribe(prod => {
-    this.productosMod.push(prod);
-    
+   
+   if (!this.productosMod.find(p => p.id === prod.id)) {
+      this.productosMod.push(prod);
+    }
+      
     // Limpia el formulario
     this.nuevoProducto = { id: 0, nombre: '', sku: '', precio: 0, stock: 0, imagen: '' };
     

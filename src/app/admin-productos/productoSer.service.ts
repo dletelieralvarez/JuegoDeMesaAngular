@@ -34,7 +34,9 @@ export class ProductoService {
   // POST en memoria
   agregarProducto(producto: ProductosMod): Observable<ProductosMod> {
     producto.id = this.generarNuevoId();
-    this.productosEnMemoria.push(producto);
+    if (!this.productosEnMemoria.find(p => p.id === producto.id)) {
+      this.productosEnMemoria.push(producto);
+    }
     return of(producto);
   }
 
