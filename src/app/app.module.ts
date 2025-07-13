@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,10 +38,11 @@ import { ProductoComponent } from './producto/producto.component';
 import { HomeComponent } from './home/home.component';
 import { PrecioPipe } from './validaciones/precio.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProdAdminComponent } from './admin-productos/prod-admin/prod-admin.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
     CarritoComponent,
     LoginComponent,
     RegistroComponent,
@@ -72,13 +74,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ProductoComponent,
     HomeComponent,
-    PrecioPipe
+    PrecioPipe,
+    ProdAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

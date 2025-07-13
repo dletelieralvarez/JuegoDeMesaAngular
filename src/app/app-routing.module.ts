@@ -28,6 +28,7 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { PreescolarComponent } from './categoria-preescolar/preescolar/preescolar.component';
 import { RegistroComponent } from './registro-cliente/registro/registro.component';
 import { HomeComponent } from './home/home.component';
+import { ProdAdminComponent } from './admin-productos/prod-admin/prod-admin.component';
 
 const routes: Routes = [
   { path:'kids', component: KidsComponent},  
@@ -59,6 +60,7 @@ const routes: Routes = [
   { path: 'juego-mesa-monopoly-gamer-mario-kart-fam', component: JuegoMesaMonopolyGamerMarioKartFamComponent },
   { path: 'juego-mesa-monopoly-harry-potter-fam', component: JuegoMesaMonopolyHarryPotterFamComponent },
   { path: 'perfil-usuario', component: PerfilUsuarioComponent },
+  { path: 'prod-admin', component: ProdAdminComponent },
   { path:'**',redirectTo:''}
 ];
 

@@ -1,0 +1,101 @@
+<div class="container mt-4"  style="padding-top: 40px;">
+  <div *ngIf="mensajeExito" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ mensajeExito }}
+    <button type="button" class="btn-close" (click)="mensajeExito = null"></button>
+  </div>
+  
+  <div class="row">
+    <!-- Formulario Agregar -->
+    <div class="container my-4">
+  <h4>Agregar producto</h4>
+  <form #form="ngForm" (ngSubmit)="agregarProducto()">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <input type="text" [(ngModel)]="nuevoProducto.nombre" name="nombre" class="form-control" placeholder="Nombre" required>
+        <!-- <div *ngIf="form.submitted && !nuevoProducto.nombre" class="text-danger">Nombre es requerido.</div> -->
+      </div>
+      <div class="col-md-4 mb-3">
+        <input type="text" [(ngModel)]="nuevoProducto.sku" name="sku" class="form-control" placeholder="SKU" required>
+        <!-- <div *ngIf="form.submitted && !nuevoProducto.sku" class="text-danger">SKU es requerido.</div> -->
+      </div>
+      <div class="col-md-4 mb-3">
+        <input type="number" [(ngModel)]="nuevoProducto.precio" name="precio" class="form-control" placeholder="Precio" required>
+        <!-- <div *ngIf="form.submitted && !nuevoProducto.precio" class="text-danger">Precio es requerido.</div> -->
+      </div>
+      <div class="col-md-4 mb-3">
+        <input type="number" [(ngModel)]="nuevoProducto.stock" name="stock" class="form-control" placeholder="Stock" required>
+        <!-- <div *ngIf="form.submitted && !nuevoProducto.stock" class="text-danger">Stock es requerido.</div> -->
+      </div>
+      <div class="col-md-4 mb-3">
+        <input type="text" [(ngModel)]="nuevoProducto.imagen" name="imagen" class="form-control" placeholder="URL de imagen" required>
+        <!-- <div *ngIf="form.submitted && !nuevoProducto.imagen" class="text-danger">Imagen es requerida.</div> -->
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-success" type="submit" [disabled]="form.invalid">Agregar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+  
+
+  <!-- Productos -->
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" *ngFor="let producto of productosMod">
+      <div class="card h-100">
+        <img [src]="producto.imagen" class="card-img-top" alt="{{producto.nombre}}" style="height: 200px; object-fit: contain;">
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text">{{ producto.sku }}</p>
+          <p class="card-text"><strong>Precio:</strong> ${{ producto.precio }}</p>
+          <p class="card-text"><strong>Stock:</strong> {{ producto.stock }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-danger btn-sm" (click)="eliminar(producto.id)">Eliminar</button>
+          <button class="btn btn-primary btn-sm"
+                  (click)="abrirModalEdicion(producto)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editarModal">
+            Editar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal Editar Producto -->
+<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarModalLabel">Editar producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" *ngIf="productoEditando">
+        <form (ngSubmit)="guardarEdicion()">
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="productoEditando.nombre" name="editNombre" class="form-control">
+          </div>
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="productoEditando.sku" name="editSku" class="form-control">
+          </div>
+          <div class="mb-2">
+            <input type="number" [(ngModel)]="productoEditando.precio" name="editPrecio" class="form-control">
+          </div>
+          <div class="mb-2">
+            <input type="number" [(ngModel)]="productoEditando.stock" name="editStock" class="form-control">
+          </div>
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="productoEditando.imagen" name="editImagen" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
