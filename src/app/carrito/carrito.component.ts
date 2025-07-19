@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../carrito.service';
 
+/**
+ * @component
+ * @description
+ * Componente Carrito: Carrito de compras del juego de mesa. Permite ver los productos añadidos, modificar cantidades, eliminar productos y finalizar la compra.
+ * 
+ */
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
